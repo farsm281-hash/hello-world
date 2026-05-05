@@ -3,86 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Globeway Est. | Global Excellence</title>
+  <title>Globeway Est. | Personally Curated Travel</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
     body { font-family: 'Inter', system-ui, sans-serif; }
+    .heading-font { font-family: 'Playfair Display', sans-serif; }
+
     .hero-bg {
-      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)), 
-                  url('https://source.unsplash.com/2000x1200/?global,earth,aerial') center/cover no-repeat;
+      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.9)), 
+                  url('https://source.unsplash.com/2000x1200/?mecca,haramain,saudi') center/cover no-repeat fixed;
     }
-    .nav-scrolled { background: rgba(15,23,42,0.95); backdrop-filter: blur(12px); }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px -12px rgb(37 99 235 / 0.25);
+    }
   </style>
 </head>
-<body class="bg-slate-950 text-white overflow-x-hidden">
+<body class="bg-slate-950 text-white">
 
   <!-- Navbar -->
-  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-5">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+  <nav class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-xl font-bold">🌍</div>
-        <h1 class="text-2xl font-bold tracking-tight">Globeway Est.</h1>
+        <span class="text-3xl">🌍</span>
+        <h1 class="text-3xl font-bold tracking-tighter">Globeway Est.</h1>
       </div>
       <div class="hidden md:flex gap-8 text-lg">
         <a href="#home" class="hover:text-blue-400 transition">Home</a>
         <a href="#services" class="hover:text-blue-400 transition">Services</a>
-        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#why-us" class="hover:text-blue-400 transition">Why Choose Us</a>
         <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
       </div>
-      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition">Get In Touch</a>
+      <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full flex items-center gap-2 font-medium">
+        <i class="fab fa-whatsapp text-xl"></i> WhatsApp
+      </a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center relative">
-    <div class="max-w-5xl mx-auto px-6 pt-20">
-      <h1 class="text-7xl md:text-8xl font-black leading-none mb-6">
-        CONNECTING<br>THE WORLD
+  <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center">
+    <div class="max-w-4xl mx-auto px-6 pt-20">
+      <h1 class="heading-font text-6xl md:text-7xl font-bold leading-none mb-6">
+        Personally Curated.<br>Expertly Delivered.
       </h1>
-      <p class="text-2xl md:text-3xl text-slate-300 mb-10 max-w-2xl mx-auto">
-        Saudi-based global solutions in logistics, technology, and international trade.
+      <p class="text-2xl text-slate-300 mb-10">
+        Hotels I have stayed in myself • Premium transportation across Saudi Arabia
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-xl px-10 py-5 rounded-2xl font-semibold transition transform hover:scale-105">Start a Project</a>
-        <a href="#services" class="border border-white/50 hover:bg-white/10 text-xl px-10 py-5 rounded-2xl font-semibold transition">Our Services</a>
-      </div>
-    </div>
-    <div class="absolute bottom-10 left-1/2 animate-bounce">
-      <i class="fas fa-chevron-down text-4xl"></i>
+      <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-xl px-12 py-6 rounded-3xl font-semibold transition">
+        Book Your Journey
+      </a>
     </div>
   </section>
 
-  <!-- Stats -->
-  <section class="py-16 bg-slate-900">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-6">
-      <div><div class="text-5xl font-bold text-blue-500">50+</div><div class="text-slate-400">Countries Reached</div></div>
-      <div><div class="text-5xl font-bold text-blue-500">200+</div><div class="text-slate-400">Projects Delivered</div></div>
-      <div><div class="text-5xl font-bold text-blue-500">15+</div><div class="text-slate-400">Years Experience</div></div>
-      <div><div class="text-5xl font-bold text-blue-500">98%</div><div class="text-slate-400">Client Satisfaction</div></div>
+  <!-- Why Us -->
+  <section id="why-us" class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8">Why Travelers Trust Globeway</h2>
+      <div class="max-w-2xl mx-auto text-lg text-slate-300">
+        <p class="mb-8">
+          I personally book, stay in, and test every hotel I recommend. 
+          No generic lists — only places I have experienced myself and believe in.
+        </p>
+        <p class="text-blue-400 font-medium">Your comfort and peace of mind come first.</p>
+      </div>
     </div>
   </section>
 
   <!-- Services -->
   <section id="services" class="py-24 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">World-Class Solutions</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-900 p-10 rounded-3xl hover:scale-105 transition group">
-          <i class="fas fa-ship text-6xl text-blue-500 mb-6"></i>
-          <h3 class="text-3xl font-semibold mb-4">Global Logistics</h3>
-          <p class="text-slate-400">Sea, air, and land freight with end-to-end visibility and customs clearance.</p>
+      <h2 class="text-5xl font-bold text-center mb-16">Our Services</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Hotel -->
+        <div class="service-card bg-slate-900 p-8 rounded-3xl text-center fade-in">
+          <i class="fas fa-hotel text-6xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Curated Hotels</h3>
+          <p class="text-slate-400">Only hotels I have personally stayed in and tested. Honest recommendations based on real experience.</p>
         </div>
-        <div class="bg-slate-900 p-10 rounded-3xl hover:scale-105 transition group">
-          <i class="fas fa-microchip text-6xl text-blue-500 mb-6"></i>
-          <h3 class="text-3xl font-semibold mb-4">Digital Transformation</h3>
-          <p class="text-slate-400">Custom software, AI solutions, and enterprise technology consulting.</p>
+
+        <!-- VIP Car -->
+        <div class="service-card bg-slate-900 p-8 rounded-3xl text-center fade-in" style="transition-delay: 100ms">
+          <i class="fas fa-car text-6xl text-blue-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">VIP Private Cars</h3>
+          <p class="text-slate-400">Luxury sedan &amp; SUV transfers with professional drivers. Comfort and privacy guaranteed.</p>
         </div>
-        <div class="bg-slate-900 p-10 rounded-3xl hover:scale-105 transition group">
-          <i class="fas fa-globe text-6xl text-blue-500 mb-6"></i>
-          <h3 class="text-3xl font-semibold mb-4">International Trade</h3>
-          <p class="text-slate-400">Market entry, sourcing, and strategic business development worldwide.</p>
+
+        <!-- Al Haramain -->
+        <div class="service-card bg-slate-900 p-8 rounded-3xl text-center fade-in" style="transition-delay: 200ms">
+          <i class="fas fa-train text-6xl text-emerald-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Al Haramain Train</h3>
+          <p class="text-slate-400">Fast, comfortable high-speed train tickets between Mecca, Medina, and Jeddah.</p>
+        </div>
+
+        <!-- Group Bus -->
+        <div class="service-card bg-slate-900 p-8 rounded-3xl text-center fade-in" style="transition-delay: 300ms">
+          <i class="fas fa-bus text-6xl text-purple-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Group Buses</h3>
+          <p class="text-slate-400">Comfortable coaches for families, Umrah groups, and corporate travel.</p>
         </div>
       </div>
     </div>
@@ -90,18 +121,15 @@
 
   <!-- Contact -->
   <section id="contact" class="py-24 bg-gradient-to-b from-slate-900 to-black">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-4">Let's Build the Future Together</h2>
-      <p class="text-center text-slate-400 mb-12">Tell us about your vision. We'll make it happen.</p>
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-6">Ready to Travel with Confidence?</h2>
+      <p class="text-slate-400 mb-12">Tell me your dates and requirements. I’ll personally arrange everything.</p>
       
       <form action="https://formspree.io/f/mqakgqwa" method="POST" class="space-y-6">
-        <div class="grid md:grid-cols-2 gap-6">
-          <input type="text" name="name" placeholder="Full Name" required class="bg-slate-900 border border-slate-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-blue-500">
-          <input type="email" name="email" placeholder="Email Address" required class="bg-slate-900 border border-slate-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-blue-500">
-        </div>
-        <input type="text" name="company" placeholder="Company (Optional)" class="w-full bg-slate-900 border border-slate-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-blue-500">
-        <textarea name="message" rows="6" placeholder="Tell us about your project..." required class="w-full bg-slate-900 border border-slate-700 rounded-3xl px-6 py-5 focus:outline-none focus:border-blue-500"></textarea>
-        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-6 text-xl font-semibold rounded-3xl transition">Send Message →</button>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full bg-slate-900 border border-slate-700 rounded-2xl px-6 py-5">
+        <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full bg-slate-900 border border-slate-700 rounded-2xl px-6 py-5">
+        <textarea name="message" rows="5" placeholder="Tell me about your trip (dates, number of people, preferred hotels, etc.)" required class="w-full bg-slate-900 border border-slate-700 rounded-3xl px-6 py-5"></textarea>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-7 text-xl font-semibold rounded-3xl">Send Message</button>
       </form>
     </div>
   </section>
@@ -109,14 +137,17 @@
   <footer class="bg-black py-12 text-center text-slate-500">
     <p class="text-2xl font-bold text-white mb-2">Globeway Est.</p>
     <p>Jeddah, Kingdom of Saudi Arabia</p>
-    <p class="mt-8">© 2026 • Built with passion on AWS Amplify</p>
+    <p class="mt-6">© 2026 • Personally curated travel experiences</p>
   </footer>
 
   <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 50);
+    // Simple scroll animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
     });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
